@@ -18,7 +18,7 @@ app.post("/signup", async (req, res) => {
     const userId = uuidv4();
     const hashedPassword = await bcrypt.hash(password, 10);
     const token = serverClient.createToken(userId);
-    res.json({ token, userId, firstName, lastName, username, hashedPassword });
+    res.json({ token, userId, firstName, username, hashedPassword });
   } catch (error) {
     res.json(error);
   }
@@ -40,7 +40,6 @@ app.post("/login", async (req, res) => {
       res.json({
         token,
         firstName: users[0].firstName,
-        lastName: users[0].lastName,
         username,
         userId: users[0].id,
       });

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useChatContext, Channel } from "stream-chat-react";
 import Game from "./Game.js";
+//import "./JoinGame.css"
 import CustomInput from "./CustomInput";
 function JoinGame() {
   const [rivalUsername, setRivalUsername] = useState("");

@@ -1,4 +1,5 @@
 import React from "react";
+import "./button.css"
 import { ChatAutoComplete, useMessageInputContext } from "stream-chat-react";
 
 function CustomInput() {

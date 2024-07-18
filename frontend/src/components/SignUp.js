@@ -8,13 +8,12 @@ function SignUp({ setIsAuth }) {
 
   const signUp = () => {
     Axios.post("http://localhost:3001/signup", user).then((res) => {
-      const { token, userId, firstName, lastName, username, hashedPassword } =
+      const { token, userId, firstName, username, hashedPassword } =
         res.data;
       cookies.set("token", token);
       cookies.set("userId", userId);
       cookies.set("username", username);
       cookies.set("firstName", firstName);
-      cookies.set("lastName", lastName);
       cookies.set("hashedPassword", hashedPassword);
       setIsAuth(true);
     });
@@ -28,12 +27,7 @@ function SignUp({ setIsAuth }) {
           setUser({ ...user, firstName: event.target.value });
         }}
       />
-      <input
-        placeholder="Last Name"
-        onChange={(event) => {
-          setUser({ ...user, lastName: event.target.value });
-        }}
-      />
+
       <input
         placeholder="Username"
         onChange={(event) => {
